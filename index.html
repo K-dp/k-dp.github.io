@@ -1,1 +1,224 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Satvik Saha">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I'm a freshman at IISER Kolkata, an amateur programmer, chess player, and violinist.">
+    
+    <title>Satvik Saha</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" > 
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="init.js"></script>
+</head>
+<body>
+    <div id="global-container">
+        <div id="logo-container">
+            <img id="logo" src="logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
+            <div id="name">Satvik Saha</div>
+            <div id="links">
+                <a class="card-item" href="https://sahasatvik.github.io/assignments" target="_blank">assignments</a>
+                <a class="card-item" href="https://sahasatvik.github.io/cv.pdf" target="_blank">cv</a>
+                <a class="card-item" href="https://sahasatvik.github.io/dotfiles" target="_blank">dotfiles</a>
+            </div>
+            <div id="links">
+                <a class="card-item" href="https://sahasatvik.github.io/minesweeper/" target="_blank">minesweeper</a>
+                <a class="card-item" href="https://sahasatvik.github.io/typingtest/" target="_blank">typing test</a>
+            </div>
+        </div>
+        <div id="main-card-container" class="card-container">
+            <div id="quote-card" class="card card-dark card-row pressable" onmouseup="showQuote(-1, quotes)">
+                <div class="card-inner-container">
+                    <div class="card-item" id="quote-text"></div>
+                </div>
+                <div id="quote-author" class="card-title"></div>
+            </div>
+            <div id="aboutme" class="card card-dark">
+                <div class="card-title">
+                    Hey there!
+                </div> 
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        I'm a freshman at <a href="https://www.iiserkol.ac.in/web/en/">IISER Kolkata</a>, interested
+                        in majoring in mathematics or physics.
+                    </div>
+                    <div class="card-item">
+                        I'm still honing my skills in basic web design, as well as programming with C, Java and Python.
+                        I have some experience with Markdown and LaTeX.
+                    </div>
+                    <div class="card-item">
+                        I'm also an amateur chess player, speedcuber and violinist.
+                    </div>
+                </div>
+            </div>
+            <div id="superpermutation" class="card card-dark">
+                <a id="soundcloud-img-container" href="https://soundcloud.com/sahasatvik/5906n7" target="_blank">
+                    <img id="soundcloud-img" src="5906.svg" alt="5906">
+                </a>
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        Inspired by <a href="https://youtu.be/_tpNuulTeSQ" target="_blank">Matt Parker's video</a>,
+                        I wrote some code to play the superpermutation for n = 7, length 5906.
+                    </div>
+                </div>
+                <div id="superpermutation-links">
+                    <a id="soundcloud-link" class="card-item" href="https://soundcloud.com/sahasatvik/5906n7" target="_blank">soundcloud</a>
+                    <a id="youtube-link" class="card-item" href="https://youtu.be/j3-WD2mlQ9w" target="_blank">youtube</a>
+                    <a id="gist-link" class="card-item" href="https://gist.github.com/sahasatvik/48b6593522a13940f023b11acad0c30e" target="_blank">code</a>
+                </div>
+            </div>
+            <div id="books" class="card card-dark">
+                <div class="card-title">
+                    Recommended reading
+                </div>
+                <ul class="card-inner-container">
+                    <li class="card-item">
+                        The Little Prince,
+                        <i>Antoine de Saint-Exupéry</i>    
+                    </li>
+                    <li class="card-item">
+                        The Hitchhiker's Guide to the Galaxy,
+                        <i>Douglas Adams</i>
+                    </li>
+                    <li class="card-item">
+                        The Lord of the Rings,
+                        <i>J.R.R. Tolkien</i>
+                    </li>
+                    <li class="card-item">
+                        His Dark Materials,
+                        <i>Philip Pullman</i>
+                    </li>
+                    <li class="card-item">
+                        A Short History of Nearly Everything,
+                        <i>Bill Bryson</i>
+                    </li>
+                    <li class="card-item">
+                         Gödel, Escher, Bach,
+                         <i>Douglas Hofstadter</i>
+                    </li>
+                </ul>
+            </div>
+            <div id="now-playing-card" class="card card-dark card-row" style="display: none">
+                <div id="now-playing-title" class="card-title">
+                    <i class="card-icon material-icons" title="Now Playing">audiotrack</i>
+                </div>
+                <div class="card-inner-container">
+                    <div class="card-item" id="now-playing-album"></div>
+                    <div class="card-item" id="now-playing">
+                        <a class="card-item" id="now-playing-artist" target="_blank"></a> - 
+                        <a class="card-item" id="now-playing-track" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="contacts" class="card card-dark card-row borderless"> 
+                <div class="card-inner-container">
+                    <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
+                    <a class="card-item" href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
+                    <a class="card-item" href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
+                    <a class="card-item" href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
+                    <a class="card-item" href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
+                    <a class="card-item" href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        showQuote(-1, quotes);
+        
+        var x = document.getElementsByClassName("card");
+        var light;
+        
+        try {
+            light = JSON.parse(localStorage.getItem("light"));
+            if (light == null) {light = false;}
+        } catch (err) {
+            light = false;
+        }
+        
+        function lightTheme() {
+            document.getElementById("logo").classList.add("inverted");
+            document.getElementById("soundcloud-img").classList.add("inverted");
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("card-dark");
+            }
+            document.body.style.backgroundColor = "#f2f2f2";
+            document.getElementById("name").style.color = "#1d1f21";
+        }
+        function darkTheme() {
+            document.getElementById("logo").classList.remove("inverted");
+            document.getElementById("soundcloud-img").classList.remove("inverted");
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.add("card-dark");
+            }
+            document.body.style.backgroundColor = "#1d1f21";
+            document.getElementById("name").style.color = "#ffffff";
+        }
+        function toggleTheme() {
+            light = !light;
+            refreshTheme();
+        }
+        function refreshTheme() {
+            theme = light? lightTheme : darkTheme;
+            theme();
+            try {
+                localStorage.setItem("light", JSON.stringify(light));
+            } catch (err) {}
+        }
+        
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+        
+        var lastfmURL = 
+            'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sahasatvik&api_key=3193e14c84770e38d316f60f08134807&limit=1&format=json';
+        function updateNowPlaying () {
+            getJSON(lastfmURL,
+                function(err, data) {
+                    if (err) {
+                        document.getElementById('now-playing-card').style.display = 'none';
+                        return;
+                    }
+                    if (('@attr' in data['recenttracks']['track']['0'])
+                      && (data['recenttracks']['track'][0]['@attr']['nowplaying'] === 'true')) {
+                        var album  = data['recenttracks']['track'][0]['album']['#text'];
+                        var artist = data['recenttracks']['track'][0]['artist']['#text'];
+                        var track  = data['recenttracks']['track'][0]['name'];
+                        var url    = data['recenttracks']['track'][0]['url'];
+                        document.getElementById('now-playing-card').style.display = 'block';
+                        document.getElementById('now-playing-album').innerHTML = album;
+                        document.getElementById('now-playing-artist').innerHTML = artist;
+                        document.getElementById('now-playing-track').innerHTML = track;
+                        document.getElementById('now-playing-artist').href = encodeURI('https://www.last.fm/music/' + artist);
+                        document.getElementById('now-playing-track').href = url;
+                    } else {
+                        document.getElementById('now-playing-card').style.display = 'none';
+                    }
+                }
+            );
+        }
+        
+        updateNowPlaying();
+        setInterval(updateNowPlaying, 10000);
+        
+        refreshTheme();
+    </script>
+</body>
+</html>
