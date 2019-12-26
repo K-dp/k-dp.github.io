@@ -168,34 +168,6 @@
                 }
             };
             xhr.send();
-        };
-        
-        var lastfmURL = 
-            'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sahasatvik&api_key=3193e14c84770e38d316f60f08134807&limit=1&format=json';
-        function updateNowPlaying () {
-            getJSON(lastfmURL,
-                function(err, data) {
-                    if (err) {
-                        document.getElementById('now-playing-card').style.display = 'none';
-                        return;
-                    }
-                    if (('@attr' in data['recenttracks']['track']['0'])
-                      && (data['recenttracks']['track'][0]['@attr']['nowplaying'] === 'true')) {
-                        var album  = data['recenttracks']['track'][0]['album']['#text'];
-                        var artist = data['recenttracks']['track'][0]['artist']['#text'];
-                        var track  = data['recenttracks']['track'][0]['name'];
-                        var url    = data['recenttracks']['track'][0]['url'];
-                        document.getElementById('now-playing-card').style.display = 'block';
-                        document.getElementById('now-playing-album').innerHTML = album;
-                        document.getElementById('now-playing-artist').innerHTML = artist;
-                        document.getElementById('now-playing-track').innerHTML = track;
-                        document.getElementById('now-playing-artist').href = encodeURI('https://www.last.fm/music/' + artist);
-                        document.getElementById('now-playing-track').href = url;
-                    } else {
-                        document.getElementById('now-playing-card').style.display = 'none';
-                    }
-                }
-            );
         }
         
         updateNowPlaying();
