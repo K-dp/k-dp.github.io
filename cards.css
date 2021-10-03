@@ -14,6 +14,9 @@
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
+    border-color: #afafaf;
+    padding: 1em;
+    margin: .5em .5em;
 }
 
 .card-row {
@@ -21,6 +24,14 @@
     text-align: center;
 }
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card.pressable:hover{
+    border-color: #000000;
+}
+.card.pressable:active {
+    border-color: #afafaf;
 }
 
 .card > .card-title {
@@ -31,6 +42,13 @@
 }
 
 .card > .card-title > .card-icon {
+    float: right;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+.card.card-row > .card-title > .card-icon {
+    float: inherit;
+    margin-left: 0;
 }
 
 .card > .card-inner-container > .card-item {
@@ -78,4 +96,13 @@
 
 .card.card-dark > .card-inner-container a:hover {
     color: #ffffff;
+}
+
+/* Borderless cards */
+.card.borderless {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+.card.borderless:hover{
+    box-shadow: none;
 }
